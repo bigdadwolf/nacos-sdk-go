@@ -471,7 +471,7 @@ func (client *ConfigClient) callListener(changed, tenant string) {
 }
 
 func (client *ConfigClient) buildBasePath(serverConfig constant.ServerConfig) (basePath string) {
-	basePath = "http://" + serverConfig.IpAddr + ":" +
+	basePath = serverConfig.Scheme + serverConfig.IpAddr + ":" +
 		strconv.FormatUint(serverConfig.Port, 10) + serverConfig.ContextPath + constant.CONFIG_PATH
 	return
 }
